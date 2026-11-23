@@ -1,0 +1,82 @@
+/* Barakatta site: the game's "Channapatna toy box" tokens (see docs/DESIGN.md).
+   Single theme on purpose: the game always sits on its peacock-teal table. */
+:root {
+  --table: #0e5c63;
+  --table-dots: #1b7880;
+  --rice: #fff6e0;
+  --ink: #2a1a3a;
+  --ink-soft: #5b4a6b;
+  --turmeric: #ffc23d;
+  --kumkum: #e23d3d;
+  --sticker: 0 5px 0 var(--ink);
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--table); }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font: 500 17px/1.55 'Baloo 2', 'Baloo Tammudu 2', system-ui, sans-serif;
+  background:
+    radial-gradient(var(--table-dots) 2px, transparent 2.5px) 0 0 / 28px 28px,
+    var(--table);
+  padding: 24px max(16px, env(safe-area-inset-left)) 48px max(16px, env(safe-area-inset-right));
+}
+
+main { max-width: 720px; margin: 0 auto; }
+
+.card {
+  background: var(--rice);
+  border: 3px solid var(--ink);
+  border-radius: 22px;
+  box-shadow: var(--sticker);
+  padding: 24px 28px;
+  margin-bottom: 24px;
+}
+
+.hero { text-align: center; color: var(--rice); padding: 24px 0 16px; }
+.hero img { width: 120px; height: 120px; border-radius: 28px; border: 3px solid var(--ink); box-shadow: var(--sticker); }
+.wordmark {
+  font-size: clamp(44px, 10vw, 72px);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 16px 0 4px;
+  color: var(--turmeric);
+  -webkit-text-stroke: 3px var(--ink);
+  paint-order: stroke fill;
+  text-shadow: 0 6px 0 var(--ink);
+}
+.hero p { margin: 0 auto; max-width: 34ch; font-size: 19px; }
+
+h1, h2 { line-height: 1.2; text-wrap: balance; }
+h1 { font-size: 30px; font-weight: 800; margin: 0 0 8px; }
+h2 { font-size: 22px; font-weight: 700; margin: 24px 0 8px; }
+p, li { max-width: 65ch; }
+.muted { color: var(--ink-soft); font-size: 15px; }
+
+a { color: var(--ink); font-weight: 700; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:focus-visible { outline: 3px solid var(--turmeric); outline-offset: 3px; border-radius: 4px; }
+
+.button {
+  display: inline-block;
+  background: var(--turmeric);
+  border: 3px solid var(--ink);
+  border-radius: 18px;
+  box-shadow: var(--sticker);
+  padding: 10px 22px;
+  text-decoration: none;
+  margin: 4px 6px 12px 0;
+}
+
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; padding: 0; list-style: none; }
+.facts li { background: #fff; border: 2px solid var(--ink); border-radius: 14px; padding: 10px 14px; }
+
+nav.lang { text-align: right; margin-bottom: 8px; }
+nav.lang a { color: var(--rice); }
+
+footer { text-align: center; color: var(--rice); font-size: 15px; }
+footer a { color: var(--rice); }
